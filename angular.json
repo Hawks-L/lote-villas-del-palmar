@@ -23,6 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "baseHref": "/lote-villas-del-palmar/",
             "outputPath": "dist/lote-villas-del-palmar",
             "index": "src/index.html",
             "browser": "src/main.ts",
