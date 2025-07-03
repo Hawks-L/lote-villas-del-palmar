@@ -1,0 +1,286 @@
+.single-post {
+  padding: 20px;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* 
+.featured-img {
+  max-width: 100%;
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+ */
+
+ 
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: default;
+}
+
+.zoom-controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+.zoom-nav {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 0 15px;
+  transition: transform 0.2s;
+}
+
+.zoom-nav:hover {
+  transform: scale(1.2);
+  color: rgb(38, 255, 0);
+}
+
+
+.zoomed-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+  cursor: default; /* Mouse normal */
+}
+
+
+
+/* Imagen destacada y carrusel */
+.featured img{
+  width: 100%;
+  max-width: 535px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel img {
+  width: 100%;
+  max-width: 950px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto hover (solo en pantallas grandes) */
+@media (hover: hover) and (pointer: fine) {
+  .featured img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    
+  }
+}
+
+.carousel swiper-container{
+  position: relative;
+  width: 200%;
+  max-width: 485px;
+  overflow: hidden;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel swiper-slide {
+ /*  display: flex;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); */
+
+   width: 100%;
+  height: 400px; /* ajusta a lo que prefieras */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .carousel swiper-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+
+
+
+/* Cambiar color de las flechas slide */
+swiper-container::part(button-prev),
+swiper-container::part(button-next) {
+  color: rgb(0, 0, 0) !important;
+  fill: rgb(0, 0, 0) !important;
+  stroke: rgb(0, 0, 0) !important;
+}
+
+/* Efecto sombra al hacer hover */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  text-shadow: 0 0 10px rgb(0, 0, 0);
+  transform: scale(1.1);
+}
+
+/* Bolita activa (slide actual) */
+swiper-container::part(bullet-active) {
+  background-color: rgb(0, 0, 0) !important;
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featured img,
+  .carousel swiper-slide img,
+  .carousel swiper-container {
+    max-width: 100%;
+  }
+
+  .info-grid {
+    flex-direction: column;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+}
+
+
+.summary-button {
+  background-color: #d39d32;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.summary-button:hover {
+  background-color: #dfa83a;
+}
+
+.icon-img {
+  width: 24px;
+  height: auto;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fcfafa;
+}
+
+
+.fa-icon {
+  font-size: 2.5rem; /* ~24px, ajusta según necesidad */
+  color: #001f3f; /* opcional: color azul oscuro como el anterior */
+}
+
+
+
+
+
+  .post-details {
+  margin-top: 40px;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.info-grid .left {
+  flex: 1 1 60%;
+}
+
+.info-grid .right {
+  flex: 1 1 30%;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.details-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.features {
+  display: flex;
+  gap: 20px;
+}
+
+.feature-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list h5 {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.location {
+  margin-top: 40px;
+}
+
+.map-container iframe {
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-grid {
+    flex-direction: column;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+}
+
+.map-container iframe {
+  border-radius: 8px;
+}
+
+
+

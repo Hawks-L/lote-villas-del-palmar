@@ -1,0 +1,144 @@
+<section class="single-post">
+  <div class="grid">
+    <!-- Imagen destacada -->
+    <div class="featured">
+      <img
+      src="assets\img\puenteFrente.png"
+      alt="Imagen destacada"
+      class="featured-img"
+      (click)="openZoom('assets\img\puenteFrente.png')"
+      [style.cursor]="'pointer'"
+     />
+    </div>
+
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel" >
+      <swiper-container
+  slides-per-view="1"
+  navigation="true"
+  pagination="true"
+  autoplay-delay="4000"
+  
+>
+  <ng-container *ngFor="let image of images">
+    <swiper-slide (click)="zoomCarouselImage(image.url)">
+      <img 
+      [src]="image.url" 
+      [alt]="image.alt"
+      [style.cursor]="'pointer'"
+      />
+    </swiper-slide>
+  </ng-container>
+</swiper-container>
+
+<div class="zoom-overlay" *ngIf="zoomedImageUrl" (click)="closeZoom()">
+  <div class="zoom-controls" (click)="$event.stopPropagation()">
+    <button class="zoom-nav prev" (click)="prevImage()">&#10094;</button>
+    <img [src]="zoomedImageUrl" class="zoomed-image" />
+    <button class="zoom-nav next" (click)="nextImage()">&#10095;</button>
+  </div>
+</div>
+
+
+    </div>
+  
+  </div>
+
+  
+
+</section>
+
+
+
+
+<section class="container my-4">
+  <div class="border rounded p-4 shadow mx-auto text-center" style="max-width: 1200px;">
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 flex-nowrap overflow-auto">
+
+      <!-- Botón VENTA -->
+      <div>
+        <a href="https://wa.me/573112306419" target="_blank" class="btn btn-outline-warning fw-bold px-4 py-2">
+          VENTA
+        </a>
+      </div>
+
+      <!-- Precio -->
+      <div class="d-flex align-items-center gap-2">
+        <h2 class="fs-4 mb-0 fw-semibold">$160´000.000</h2>
+      </div>
+
+      <!-- Área -->
+      <div class="d-flex align-items-center gap-2">
+        <i class="fa-solid fa-ruler-combined fa-icon"></i>
+        <span class="fs-5"> Área Total: 1000 m² (25 mts Ancho x 40 mts Largo) </span>
+      </div>
+
+      <!-- Ubicación -->
+      <div class="d-flex align-items-center gap-2">
+        <i class="fa-solid fa-location-dot fa-icon"></i>
+        <span class="fs-5"> Yopal/Casanare </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="container my-4">
+  <div class="p-4 border rounded shadow bg-white post-details-container mx-auto" style="max-width: 1200px;">
+    <div class="row g-4">
+
+      
+        <h2 class="fw-bold" style="font-size: 2rem">VENTA DE LOTE EN CONDOMINIO CAMPESTRE VILLAS DEL PALMAR</h2>
+
+        <h4 class="mt-3">Descripción</h4>
+      
+        <ul class="list-unstyled ps-2" style="font-size: 1.16rem;" >
+          <li> <strong> Precio Comercial: </strong> $160’000.000</li>
+          <li> <strong> Área: </strong> 1000 M² </li>
+          <li> <strong> Condominio: </strong> Villas del Palmar </li>
+          <li> <strong> Ubicación: </strong> 12 km del casco urbano de Yopal, vía Morichal</li>
+          <li> <strong> Excelente para: </strong> construccion de casa campestre</li>
+          <li> <strong> Condominio cuenta con: </strong> Agua, Gas, Energia y Sistema de alcantarillado </li>
+          <li> <strong> Zonas Comunes: </strong> Zona BQ, Piscina, Maloca, Parques, Locales Comerciales, Cancha de voleibol playa y parque infantil</li>
+        </ul>
+      
+
+
+    </div>
+  </div>
+</section>
+
+
+<section class="container my-4">
+  <div class="p-4 border rounded shadow bg-white mx-auto" style="max-width: 1200px;">
+    <h3 class="mb-3">Ubicación</h3>
+
+    <div class="map-container rounded overflow-hidden mb-3">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15892.922143029025!2d-72.3915294!3d5.2264385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6b152f7b5b868b%3A0x7780da71585df211!2sVillas%20del%20Palmar%20Condominio%20Campestre!5e0!3m2!1ses!2sco!4v1751419469036!5m2!1ses!2sco"
+        width="100%"
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"
+        >
+      </iframe>
+
+    </div>
+
+    <!-- Botón para abrir Google Maps -->
+    <a
+      href="https://maps.app.goo.gl/hvkFCkSPACdfuquA7"
+      target="_blank"
+      class="btn btn-outline-primary fw-bold"
+    >
+      Ver en Google Maps
+    </a>
+  </div>
+</section>
+
+
+    
